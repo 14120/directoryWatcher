@@ -44,7 +44,7 @@ namespace directoryWatcher
 
         private void OnRenamed(object sender, RenamedEventArgs e)
         {
-            string[] rows = { e.OldFullPath, e.ChangeType.ToString(), DateTime.Now.ToString() };
+            string[] rows = { e.OldFullPath + " -> " + e.Name, e.ChangeType.ToString(), DateTime.Now.ToString() };
             ListViewItem lvi = new ListViewItem(rows);
             addItemToListView(listView, lvi);
         }
